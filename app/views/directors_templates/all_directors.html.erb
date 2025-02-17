@@ -1,0 +1,40 @@
+<h1>List of all directors</h1>
+
+<table border="1">
+  <tr>
+    <th> 
+      ID
+    </th>
+    <th> 
+      Image
+    </th>
+    <th> 
+      Name
+    </th>
+    <th>
+      Dob
+    </th>
+    <th>
+    </th>
+  </tr>
+
+  <% Director.all.each do |director|%>
+    <tr> 
+      <th> 
+        <%= director.id %>
+      </th>
+      <th> 
+        <img src="<%= director.image %>">
+      </th>
+      <th>
+        <%= director.name %>
+      </th>
+      <th>
+        <%= director.dob %>
+      </th>
+      <th>
+      </th>
+    </tr>
+  <%end%>
+</table>
+  
