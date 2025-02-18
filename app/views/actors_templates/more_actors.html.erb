@@ -66,23 +66,28 @@
     </th>
   </tr>
 
-  <%= @acting_history.each do |character| %>
+  <% @past_characters.each do |character| %>
     <tr>
       <th>
-        <%= character.id %>
+        <%past_roles = character.movie_id %>
+        <% casting_history = Movie.where({:id => past_roles}).at(0)%>
+        <%= casting_history.title %>
       </th>
       <th>
-        <img src= <%= movie.image %> >
+        <%= casting_history.year %>
       </th>
       <th>
-        <%= movie.title %>
+        <% director_id = casting_history.director_id %>
+        <% director_find = Director.where({:id => director_id}).at(0)%>
+        <%= director_find.name %>
+
       </th>
       <th>
-        <%= movie.year %>
+        <%= character.name %>
       </th>
       <th>
-        <%= @details.name %>
+        <a href="/movies/<%=character.movie_id%>">Show details</a>
       </th>
-      <th>
-        <a href="/movies/<%=movie.id %>">Show details</a>
     </tr>
+  <%end%>
+</table>

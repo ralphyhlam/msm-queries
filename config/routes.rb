@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   #Directors Section
   get("/directors", { :controller => "directors", :action => "all_directors"})
 
+  get("/directors/youngest", {:controller => "directors", :action => "youngest"})
+
+  get("/directors/eldest", {:controller => "directors", :action => "eldest"})
+
   get("/directors/:director_id", { :controller => "directors", :action => "learn_more"})
 
   #Movies Section
@@ -16,4 +20,6 @@ Rails.application.routes.draw do
 
   get("/actors/:actor_id", {:controller => "actors", :action => "actor_details"})
 
+  #Eldest & Youngest
+  
 end
