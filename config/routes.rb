@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 
   get("/movies/:movie_id", { :controller => "movies", :action => "movie_details"})
 
+  #Actors Section 
+  get("/actors", {:controller => "actors", :action => "all_actors"})
+
+  get("/actors/:actor_id", {:controller => "actors", :action => "actor_details"})
+
 end
